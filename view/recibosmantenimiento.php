@@ -12,14 +12,14 @@
 require("layout/header.php");
 ?>
 
-<h1>RECIBO</h1>
-<br />
+ <!-- He añadido cambio en el titulo -->
+<h1>Editar recibo</h1>
+
 <h2><?php echo ($opcion == 'EDITAR' ? 'MODIFICAR' : 'NUEVO'); ?></h2>
 <form action="<?php echo 'index.php?c=recibos&m=' .
                     ($opcion == 'EDITAR' ? 'modificar&id=' . $recibos->id : 'insertar'); ?>"
     method="POST">
     <form action="">
-
 
         </select>
         <label for="factura_id" class="form-label">Factura</label>
@@ -56,7 +56,6 @@ require("layout/header.php");
         required />
 
         <br />
-        <br />
         <label for="importe" class="form-label">Importe</label>
         <input type="number" step="0.01"
             class="form-control"
@@ -65,7 +64,7 @@ require("layout/header.php");
             value="<?php echo ($opcion == 'EDITAR' ? $recibos->importe : ''); ?>"
             required />
 
-        <br />
+
 
         <br />
         <button type="submit" class="btn btn-primary">Aceptar</button>
